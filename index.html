@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karima Fejjari Mesticou — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#B11B44;
+    --burgundy-dark:#7A1030;
+    --burgundy-deeper:#5C0C24;
+    --blush:#FBF1F4;
+    --ink:#211619;
+    --stone:#5B5257;
+    --stone-light:#8A8085;
+    --paper:#FFFFFF;
+    --line:#EADFE2;
+    --maxw:840px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+  a{color:var(--burgundy); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{
+    outline:2.5px solid var(--burgundy);
+    outline-offset:3px;
+  }
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .wrap-wide{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+  }
+  .nav-name{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
+    color:var(--ink); white-space:nowrap;
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    color:var(--stone); font-size:0.92rem; font-weight:500;
+  }
+  .nav-links a:hover{color:var(--burgundy); text-decoration:none;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:680px){
+    .nav-links{
+      position:fixed; inset:64px 0 0 0; background:var(--paper);
+      flex-direction:column; padding:32px 28px; gap:22px;
+      transform:translateY(-8px); opacity:0; pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+    .nav-links.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+    .nav-links a{font-size:1.1rem;}
+    .nav-toggle{
+      display:block; background:none; border:none; cursor:pointer;
+      width:32px; height:24px; position:relative;
+    }
+    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+      content:''; position:absolute; left:0; width:100%; height:2px;
+      background:var(--ink); transition:transform .2s ease, opacity .2s ease;
+    }
+    .nav-toggle span{top:11px;}
+    .nav-toggle span::before{top:-8px;}
+    .nav-toggle span::after{top:8px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:88px 0 96px;
+    background:linear-gradient(180deg,var(--blush) 0%, var(--paper) 78%);
+  }
+  .hero-inner{
+    max-width:1080px; margin:0 auto; padding:0 28px;
+    position:relative; z-index:2;
+  }
+  .eyebrow-tag{
+    display:inline-block; font-size:0.82rem; font-weight:600;
+    color:var(--burgundy); letter-spacing:0.02em;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.08; letter-spacing:-0.01em;
+    max-width:11.5ch;
+  }
+  .hero-role{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    color:var(--burgundy); font-size:clamp(1.15rem,2.4vw,1.5rem);
+    margin-top:14px;
+  }
+  .hero-lede{
+    max-width:52ch; color:var(--stone); font-size:1.08rem;
+    margin-top:22px;
+  }
+  .hero-cta{
+    margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px; border-radius:2px; font-weight:600; font-size:0.95rem;
+    border:1.5px solid var(--burgundy);
+    transition:background .15s ease, color .15s ease;
+  }
+  .btn-solid{background:var(--burgundy); color:#fff;}
+  .btn-solid:hover{background:var(--burgundy-dark); text-decoration:none; color:#fff;}
+  .btn-ghost{color:var(--burgundy); background:transparent;}
+  .btn-ghost:hover{background:var(--blush); text-decoration:none;}
+
+  .kinematic{
+    position:absolute; right:-4%; top:8%; width:62%; max-width:640px;
+    opacity:0.9; z-index:1;
+  }
+  @media (max-width:900px){ .kinematic{ opacity:0.35; right:-18%; top:30%; } }
+
+  .id-badge{
+    position:absolute; right:9%; top:14%; z-index:3;
+    display:flex; align-items:center; gap:12px;
+    background:#fff; border:1px solid var(--line); border-radius:3px;
+    padding:12px 18px 12px 12px;
+    box-shadow:0 14px 30px -12px rgba(92,12,36,0.28);
+  }
+  .id-badge .mono{
+    width:46px; height:46px; border-radius:50%;
+    background:var(--burgundy); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:600; font-size:1rem;
+    flex-shrink:0;
+  }
+  .id-badge .id-text{line-height:1.3;}
+  .id-badge .id-text b{display:block; font-size:0.86rem; color:var(--ink);}
+  .id-badge .id-text span{font-size:0.76rem; color:var(--stone-light);}
+  @media (max-width:900px){ .id-badge{display:none;} }
+
+  .pillar-icon{
+    width:34px; height:34px; margin-bottom:16px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%; background:#fff; border:1.5px solid var(--burgundy);
+  }
+  .pillar-icon svg{width:18px; height:18px;}
+
+  .tl-item{transition:background .15s ease;}
+  .tl-item:hover{background:linear-gradient(90deg, var(--blush), transparent 60%);}
+
+  .edu-card{transition:box-shadow .18s ease, transform .18s ease; will-change:transform;}
+  .edu-card:hover{
+    box-shadow:0 20px 40px -22px rgba(92,12,36,0.35);
+    transform:translateY(-2px);
+  }
+
+  .contact-icon-row{margin-top:32px; display:grid; gap:14px;}
+  .contact-icon-row .c-row{display:flex; align-items:center; gap:12px;}
+  .contact-icon-row .c-icon{
+    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.28);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .contact-icon-row .c-icon svg{width:16px; height:16px; stroke:#fff;}
+  .contact-icon-row a, .contact-icon-row span.c-val{
+    color:#fff; font-size:0.98rem; font-weight:500; border-bottom:none !important;
+  }
+  .contact-icon-row a:hover{text-decoration:underline;}
+
+  .stat-row{
+    display:flex; gap:44px; flex-wrap:wrap; margin-top:56px;
+    padding-top:32px; border-top:1px solid var(--line);
+  }
+  .stat b{
+    display:block; font-family:'Fraunces',serif; font-size:1.9rem; color:var(--burgundy);
+    font-weight:600;
+  }
+  .stat span{font-size:0.85rem; color:var(--stone); max-width:20ch; display:block; margin-top:2px;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:84px 0;}
+  section.tint{background:var(--blush);}
+  .sec-head{max-width:var(--maxw); margin:0 auto 46px; padding:0 28px;}
+  .sec-kicker{
+    font-size:0.82rem; font-weight:600; color:var(--burgundy);
+    margin-bottom:10px; display:block;
+  }
+  .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);}
+  .sec-head p{color:var(--stone); max-width:58ch; margin-top:12px; font-size:1.02rem;}
+
+  /* ---------- ABOUT ---------- */
+  .about-body{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .about-body p{font-size:1.08rem; color:var(--ink); margin:0 0 20px;}
+  .about-body p:first-of-type{
+    font-family:'Fraunces',serif; font-size:1.28rem; font-weight:500; line-height:1.5;
+    color:var(--ink);
+  }
+
+  /* ---------- SKILLS ---------- */
+  .pillars{
+    max-width:1080px; margin:0 auto; padding:0 28px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  }
+  .pillar{
+    padding:0 32px; border-left:2px solid var(--line);
+  }
+  .pillar:first-child{border-left:none; padding-left:0;}
+  .pillar .pillar-num{
+    font-family:'Fraunces',serif; color:var(--line); font-size:0.85rem; font-weight:600;
+    margin-bottom:14px;
+  }
+  .pillar h3{font-size:1.3rem; margin-bottom:14px;}
+  .pillar ul{margin:0; padding:0; list-style:none;}
+  .pillar li{
+    font-size:0.94rem; color:var(--stone); padding:9px 0 9px 18px;
+    position:relative; border-top:1px solid var(--line);
+  }
+  .pillar li:first-child{border-top:none;}
+  .pillar li::before{
+    content:''; position:absolute; left:0; top:17px;
+    width:6px; height:6px; border-radius:50%; background:var(--burgundy);
+  }
+  @media (max-width:760px){
+    .pillars{grid-template-columns:1fr; gap:36px;}
+    .pillar{border-left:none; padding-left:0; padding-right:0;}
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .tl-item{
+    position:relative; padding:0 0 48px 34px; border-left:2px solid var(--line);
+  }
+  .tl-item:last-child{border-left:2px solid transparent; padding-bottom:0;}
+  .tl-item::before{
+    content:''; position:absolute; left:-7px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--paper); border:2.5px solid var(--burgundy);
+  }
+  .tl-item.current::before{background:var(--burgundy);}
+  .tl-head{
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 20px;
+  }
+  .tl-head h3{font-size:1.22rem;}
+  .tl-dates{
+    font-size:0.85rem; color:var(--stone-light); font-weight:600; white-space:nowrap;
+  }
+  .tl-org{
+    font-family:'Fraunces',serif; font-style:italic; color:var(--burgundy);
+    font-size:1rem; margin-top:4px;
+  }
+  .tl-badge{
+    display:inline-block; margin-top:10px; font-size:0.74rem; font-weight:600;
+    color:var(--burgundy); background:var(--blush); border:1px solid #F0D8DF;
+    padding:4px 10px; border-radius:2px; letter-spacing:0.01em;
+  }
+  .tl-body{margin-top:14px; color:var(--stone); font-size:0.97rem;}
+  .tl-body p{margin:0 0 12px;}
+  .tl-sub{margin-top:16px; display:grid; gap:10px;}
+  .tl-sub-item{padding-left:16px; border-left:2px solid var(--blush);}
+  .tl-sub-item h4{
+    font-family:'Inter',sans-serif; font-weight:700; font-size:0.85rem;
+    color:var(--ink); margin-bottom:3px;
+  }
+  .tl-sub-item p{font-size:0.93rem; color:var(--stone); margin:0;}
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{max-width:var(--maxw); margin:0 auto; padding:0 28px; display:grid; gap:28px;}
+  .edu-card{
+    border:1px solid var(--line); border-radius:2px; padding:28px 30px;
+    background:var(--paper);
+  }
+  .edu-top{
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px 20px;
+  }
+  .edu-top h3{font-size:1.15rem; max-width:34ch;}
+  .edu-dates{font-size:0.85rem; color:var(--stone-light); font-weight:600; white-space:nowrap;}
+  .edu-org{font-family:'Fraunces',serif; font-style:italic; color:var(--burgundy); font-size:0.96rem; margin-top:5px;}
+  .edu-highlights{
+    margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:8px 26px;
+    list-style:none; padding:0;
+  }
+  .edu-highlights li{
+    font-size:0.9rem; color:var(--stone); padding-left:16px; position:relative;
+  }
+  .edu-highlights li::before{
+    content:''; position:absolute; left:0; top:8px; width:5px; height:5px;
+    background:var(--burgundy); border-radius:50%;
+  }
+  @media (max-width:600px){ .edu-highlights{grid-template-columns:1fr;} }
+  .edu-note{margin-top:14px; font-size:0.88rem; color:var(--stone-light); font-style:italic;}
+  .edu-ellipsis{margin-top:10px; font-size:1.1rem; letter-spacing:0.12em; color:var(--stone-light);}
+
+  .edu-mini-row{
+    max-width:var(--maxw); margin:36px auto 0; padding:0 28px;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;
+  }
+  .edu-mini{border-top:2px solid var(--line); padding-top:14px;}
+  .edu-mini h4{font-size:0.98rem; margin-bottom:3px;}
+  .edu-mini span{font-size:0.83rem; color:var(--stone-light);}
+  @media (max-width:600px){ .edu-mini-row{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    background:var(--burgundy-deeper); color:#F6E9ED; padding:72px 0 40px;
+  }
+  .footer-inner{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  footer h2{color:#fff; font-size:clamp(1.6rem,3vw,2.1rem); max-width:20ch; line-height:1.2;}
+  footer p{color:#E9C6D2; max-width:46ch; margin-top:16px; font-size:1rem;}
+  .contact-list{margin-top:32px; display:grid; gap:12px;}
+  .contact-list a, .contact-list span{
+    color:#fff; font-size:1rem; font-weight:500; display:inline-block;
+  }
+  .contact-list a{border-bottom:1px solid rgba(255,255,255,0.35);}
+  .contact-list a:hover{border-color:#fff; text-decoration:none;}
+  .foot-base{
+    margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.18);
+    font-size:0.8rem; color:#CE96A6; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  .fade-in{animation:fadeUp .7s ease both;}
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-name">Karima Fejjari Mesticou</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="kinematic" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 220 C 60 180, 90 260, 140 220 C 190 180, 210 100, 260 120 C 310 140, 320 240, 370 210 C 420 180, 430 90, 480 110 C 530 130, 540 200, 600 170"
+      stroke="#B11B44" stroke-width="2.5" opacity="0.5"/>
+    <path d="M0 260 C 70 235, 100 290, 150 265 C 200 240, 220 190, 270 205 C 320 220, 330 280, 380 260 C 430 240, 440 175, 490 190 C 540 205, 550 250, 600 235"
+      stroke="#B11B44" stroke-width="2" opacity="0.28"/>
+    <circle cx="260" cy="120" r="4" fill="#B11B44" opacity="0.7"/>
+    <circle cx="480" cy="110" r="4" fill="#B11B44" opacity="0.7"/>
+  </svg>
+  <div class="id-badge" aria-hidden="true">
+    <div class="mono">KFM</div>
+    <div class="id-text">
+      <b>Karima Fejjari Mesticou</b>
+      <span>Saint Étienne · Rhône et Loire</span>
+    </div>
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow-tag fade-in">Portfolio professionnel</span>
+    <h1 class="fade-in">Chirurgie clinique, recherche et formation</h1>
+    <p class="hero-role fade-in">Médecin dentiste, conseillère clinique et formation</p>
+    <p class="hero-lede fade-in">Quinze ans à porter plusieurs rôles en même temps, la pratique clinique, la recherche et la formation des praticiens. Ce qui me fait avancer, c'est de sortir de ma zone de confort et de me fixer de nouveaux objectifs, toujours dans un seul but, la sécurité et les soins aux patients.</p>
+    <div class="stat-row fade-in">
+      <div class="stat"><b>15 ans</b><span>d'expérience clinique et industrielle</span></div>
+      <div class="stat"><b>5 ans</b><span>en recherche et communication clinique sur dispositifs médicaux</span></div>
+      <div class="stat"><b>3 rôles</b><span>de formatrice auprès de praticiens</span></div>
+      <div class="stat"><b>6</b><span>diplômes universitaires et certificats</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="profil">
+  <div class="sec-head">
+    <span class="sec-kicker">Profil</span>
+    <h2>Une pratique qui relie la clinique, la science et la pédagogie</h2>
+  </div>
+  <div class="about-body">
+    <p>Je suis médecin dentiste, avec un parcours qui va de la pratique clinique à la recherche, en passant par la formation des professionnels de santé.</p>
+    <p>J'aime les environnements où il faut porter plusieurs sujets à la fois, un protocole d'étude clinique un jour, une session de formation le lendemain, une analyse de cas clinique le jour suivant. Cette capacité à passer d'un rôle à l'autre, tout en gardant un fil conducteur clinique, est ce qui revient dans chacune de mes expériences.</p>
+    <p>Sortir de ma zone de confort ne m'effraie pas, c'est souvent là que j'apprends le plus. Je suis aujourd'hui dans une dynamique de construction, je me fixe des objectifs et je travaille pour les atteindre, en gardant toujours le même repère, la sécurité et les soins aux patients.</p>
+    <p>Une constante revient dans mon parcours, plusieurs des postes que j'ai occupés ont été créés spécialement autour de mon profil, à la croisée de la clinique, de la recherche et de la formation.</p>
+    <p>Cette dynamique se retrouve aussi dans mon rapport aux professionnels de santé. Que ce soit comme formatrice technico clinique, coordinatrice de centre de formation, ou aujourd'hui en pilotant l'évaluation clinique d'un dispositif médical, je suis en contact constant avec les praticiens qui utilisent ce que j'accompagne, et leurs retours guident directement la façon dont je fais évoluer les formations, les protocoles et les produits.</p>
+  </div>
+</section>
+
+<section id="competences" class="tint">
+  <div class="sec-head">
+    <span class="sec-kicker">Compétences</span>
+    <h2>Trois piliers, un même fil conducteur</h2>
+    <p>La clinique nourrit la recherche, la recherche nourrit la formation, et la formation ramène toujours vers le terrain.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.4 0-4.2 1.7-4.2 4.3 0 1.8.5 2.6.5 4.6 0 2.6-.8 4.6-.8 6.7 0 1.2.7 2.1 1.7 2.1 1.4 0 1.6-2.4 2.1-5.2.2-1 .4-1.5.7-1.5s.5.5.7 1.5c.5 2.8.7 5.2 2.1 5.2 1 0 1.7-.9 1.7-2.1 0-2.1-.8-4.1-.8-6.7 0-2 .5-2.8.5-4.6C16.2 4.7 14.4 3 12 3Z"/></svg>
+      </div>
+      <h3>Clinique</h3>
+      <ul>
+        <li>Chirurgie orale et pratique hospitalière (CHU de Lyon)</li>
+        <li>Implantologie et parodontologie, diplômes universitaires dédiés</li>
+        <li>Quinze ans de pratique, en France et en Tunisie</li>
+        <li>Analyse de cas cliniques et aide à la décision thérapeutique</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-5-5"/></svg>
+      </div>
+      <h3>Recherche</h3>
+      <ul>
+        <li>Pilotage de l'évaluation clinique de dispositifs médicaux</li>
+        <li>Certificat d'attaché de recherche clinique</li>
+        <li>Rédaction de protocoles, d'articles scientifiques et de revues de littérature</li>
+        <li>Contribution au développement de nouvelles fonctionnalités produit</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13Z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5v-13Z"/></svg>
+      </div>
+      <h3>Formation</h3>
+      <ul>
+        <li>Conception et animation de formations, à distance et en présentiel</li>
+        <li>Accompagnement continu des praticiens utilisateurs</li>
+        <li>Coordination d'un centre de formation en implantologie</li>
+        <li>Master en ingénierie numérique de la formation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head">
+    <span class="sec-kicker">Expérience professionnelle</span>
+    <h2>Un fil rouge, rester au contact des praticiens</h2>
+    <p>Chaque poste m'a maintenue en lien direct avec des professionnels de santé, comme formatrice, comme coordinatrice ou comme interlocutrice clinique.</p>
+  </div>
+  <div class="timeline">
+
+    <div class="tl-item current">
+      <div class="tl-head">
+        <h3>Cheffe de projet, recherche et communication clinique</h3>
+        <span class="tl-dates">Depuis février 2021</span>
+      </div>
+      <div class="tl-org">MODJAW, Villeurbanne</div>
+      <span class="tl-badge">Formation et accompagnement des praticiens</span>
+      <div class="tl-body">
+        <p>Poste officiellement intitulé Project Manager, Research and Clinical Communication, rattaché au département clinique. Il couvre cinq volets, du développement produit jusqu'au suivi client.</p>
+        <div class="tl-sub">
+          <div class="tl-sub-item">
+            <h4>Recherche et développement</h4>
+            <p>Contribution au développement expérimental et à de nouvelles fonctionnalités logicielles, préparation des protocoles de test, analyse des données scientifiques et cliniques, évaluation technique et clinique de la performance du dispositif.</p>
+          </div>
+          <div class="tl-sub-item">
+            <h4>Recherche et suivi clinique</h4>
+            <p>Définition et suivi du plan de recherche, suivi des projets universitaires, rédaction de contenus et de publications à partir des données cliniques, en lien avec les équipes réglementaires et recherche et développement.</p>
+          </div>
+          <div class="tl-sub-item">
+            <h4>Formation des praticiens</h4>
+            <p>Formation des dentistes utilisateurs, à distance et en présentiel, support clinique sur l'analyse de cas et l'élaboration du plan de traitement.</p>
+          </div>
+          <div class="tl-sub-item">
+            <h4>Suivi clients et démonstrations</h4>
+            <p>Présentation du dispositif lors d'événements scientifiques, suivi de la satisfaction des praticiens utilisateurs, dans le respect du système qualité certifié ISO 13485.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Attachée de recherche clinique, coordinatrice de centre de formation</h3>
+        <span class="tl-dates">Oct. 2019 – Fév. 2021</span>
+      </div>
+      <div class="tl-org">Centre d'implantologie et de chirurgie orale, Lyon</div>
+      <span class="tl-badge">Formation et accompagnement des praticiens</span>
+      <div class="tl-body">
+        <p>Participation à la mise en place des études cliniques, rédaction des articles scientifiques. Organisation de la formation en implantologie et animation de soirées scientifiques avec les différents acteurs du secteur.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Formatrice technico clinique</h3>
+        <span class="tl-dates">Juil. 2018 – Oct. 2019</span>
+      </div>
+      <div class="tl-org">IBS Implantologie, Auvergne Rhône Alpes</div>
+      <span class="tl-badge">Formation et accompagnement des praticiens</span>
+      <div class="tl-body">
+        <p>Support clinique pour les praticiens, organisation et animation de formations sur les implants dentaires. Suivi des retours d'expérience des utilisateurs, avec ajustement du contenu des formations suivantes selon les difficultés observées, et remontée des retours pertinents vers le développement produit. Mise en place d'études cliniques en partenariat avec des universités.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Missions d'éducation à l'hygiène bucco dentaire</h3>
+        <span class="tl-dates">Mars 2018 – Juin 2019</span>
+      </div>
+      <div class="tl-org">UFSBD Loire</div>
+      <div class="tl-body">
+        <p>Interventions dans les écoles et lors d'événements pour promouvoir la santé bucco dentaire.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Praticienne attachée, service de chirurgie orale</h3>
+        <span class="tl-dates">Janv. – Déc. 2017</span>
+      </div>
+      <div class="tl-org">Hôpital Édouard Herriot, Hospices Civils de Lyon</div>
+      <div class="tl-body">
+        <p>Pratique de la chirurgie orale au sein d'un service hospitalier universitaire.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Chargée de mission qualité, assistante dentaire</h3>
+        <span class="tl-dates">Sept. 2012 – Juil. 2016</span>
+      </div>
+      <div class="tl-org">MFL, Saint Étienne</div>
+      <div class="tl-body">
+        <p>Gestion de la démarche qualité et mise en place de protocoles pour les équipes d'assistantes dentaires. Participation à l'accord national des centres dentaires et animation de réunions. Assistance dentaire en travail à quatre mains.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Chirurgie orale, assistance au bloc</h3>
+        <span class="tl-dates">Avr. – Juil. 2012</span>
+      </div>
+      <div class="tl-org">Centre dentaire, Paris</div>
+      <div class="tl-body">
+        <p>Travail à quatre mains en chirurgie orale et assistance au bloc opératoire.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Chirurgienne dentiste, vacations cliniques ponctuelles</h3>
+        <span class="tl-dates">2010 – 2026</span>
+      </div>
+      <div class="tl-org">Cabinet privé, Monastir, Tunisie</div>
+      <div class="tl-body">
+        <p>Omnipratique et prothèses, lors de séjours ponctuels.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Stage de sixième année</h3>
+        <span class="tl-dates">Sept. 2009 – Sept. 2010</span>
+      </div>
+      <div class="tl-org">Faculté de médecine dentaire, CHU de Monastir</div>
+      <div class="tl-body">
+        <p>Omnipratique, prothèses et stomatologie.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <h3>Stage infirmier</h3>
+        <span class="tl-dates">Juil. 2005 / Août 2006</span>
+      </div>
+      <div class="tl-org">CHU de Monastir, Tunisie</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="formation" class="tint">
+  <div class="sec-head">
+    <span class="sec-kicker">Formation</span>
+    <h2>Une spécialisation construite diplôme après diplôme</h2>
+    <p>Chaque diplôme est venu approfondir un axe clinique ou pédagogique, souvent en combinant enseignement théorique, travaux pratiques et vacations hospitalières. Les points listés pour chaque programme sont une sélection, non une liste exhaustive des cours suivis.</p>
+  </div>
+
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Master 2 Sciences de l'éducation et de la formation, ingénierie du numérique dans l'enseignement supérieur et la formation d'adultes</h3>
+        <span class="edu-dates">2025 – 2026</span>
+      </div>
+      <div class="edu-org">Université de Caen Normandie, à distance</div>
+      <ul class="edu-highlights">
+        <li>Soixante ECTS répartis sur deux semestres</li>
+        <li>Modèles pédagogiques en ligne et scénarisation de cours</li>
+        <li>Encadrement et accompagnement à distance des apprenants</li>
+        <li>Hybridation des formations et ingénierie de formation numérique</li>
+        <li>Pilotage de projet, évaluation de dispositifs de formation</li>
+        <li>Référentiel Qualiopi et financement de la formation</li>
+        <li>Mémoire de recherche et stage avec portfolio de développement de dispositif</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Certificat d'attaché de recherche clinique</h3>
+        <span class="edu-dates">2019 – 2020</span>
+      </div>
+      <div class="edu-org">Sup Santé Lyon</div>
+      <ul class="edu-highlights">
+        <li>Méthodologie des essais cliniques et essais épidémiologiques</li>
+        <li>Visites de monitoring et coordination des essais</li>
+        <li>Data management, e-CRF, biostatistique appliquée</li>
+        <li>Réglementation, pharmacovigilance et dispositifs médicaux</li>
+        <li>Anglais scientifique renforcé</li>
+        <li>Panorama de domaines thérapeutiques variés, cardiologie, oncologie, neurologie, gériatrie</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+      <p class="edu-note">Formation conclue par un forum professionnel à Paris.</p>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Diplôme universitaire de parodontologie en pratique clinique</h3>
+        <span class="edu-dates">2016 – 2017</span>
+      </div>
+      <div class="edu-org">Université de Marseille, Dr V. Monnet-Corti</div>
+      <ul class="edu-highlights">
+        <li>Diagnostic et plan de traitement des maladies parodontales</li>
+        <li>Chirurgie parodontale, lambeaux de débridement, chirurgie osseuse</li>
+        <li>Techniques régénératrices, greffes osseuses, membranes</li>
+        <li>Liens entre parodontologie, prothèse, orthodontie et implantologie</li>
+        <li>Travaux pratiques sur mâchoires de porc, cas cliniques</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+      <p class="edu-note">Participation au congrès national de la Société Française de Parodontologie et d'Implantologie Orale, à Toulouse.</p>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Diplôme interuniversitaire en anatomie et implantologie, prothèses et techniques implantaires</h3>
+        <span class="edu-dates">2014 – 2015</span>
+      </div>
+      <div class="edu-org">Université de Lyon 1 / Université de Saint Étienne, Dr Grammatica, Dr Veyre</div>
+      <ul class="edu-highlights">
+        <li>Bases anatomiques et dissection au laboratoire d'anatomie</li>
+        <li>Vacations cliniques hebdomadaires au service de chirurgie maxillo faciale du Centre Hospitalier Lyon Sud</li>
+        <li>Ateliers pratiques sur plusieurs systèmes implantaires, Dentsply, Nobel, Biotech, Zimmer</li>
+        <li>Techniques avancées, greffes osseuses, implants zygomatiques et ptérygoïdiens, chirurgie guidée</li>
+        <li>Complications et suivi, péri-implantite, prothèse sur implants</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Certificat d'études supérieures en parodontologie</h3>
+        <span class="edu-dates">2012 – 2013</span>
+      </div>
+      <div class="edu-org">Université de Lyon 1, Dr Grosgogeat</div>
+      <ul class="edu-highlights">
+        <li>Biomatériaux implantables et tissus osseux</li>
+        <li>Diagnostic parodontal, sondage, facteurs de risque</li>
+        <li>Thérapeutiques non chirurgicales et chirurgicales de la poche parodontale</li>
+        <li>Chirurgie muco gingivale et parodontie implantaire</li>
+        <li>Maintenance et évolution de la maladie parodontale</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-top">
+        <h3>Diplôme de docteur en médecine dentaire</h3>
+        <span class="edu-dates">2004 – 2011</span>
+      </div>
+      <div class="edu-org">Faculté de médecine dentaire de Monastir, Tunisie</div>
+      <ul class="edu-highlights">
+        <li>Six années d'études, entre cours magistraux, travaux pratiques, travaux dirigés et vacations cliniques</li>
+        <li>Stage infirmier au CHU de Monastir</li>
+        <li>Stage clinique de sixième année, en omnipratique, prothèses et stomatologie</li>
+        <li>Thèse avec félicitations du jury</li>
+      </ul>
+      <p class="edu-ellipsis">…</p>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <span class="eyebrow-tag" style="color:#F0A9BE;">Contact</span>
+    <h2>Construisons la suite de mon parcours ensemble</h2>
+    <p>Basée à Saint Étienne, ouverte au Rhône et à la Loire, ainsi qu'aux échanges à distance.</p>
+    <a href="mailto:votre.email@exemple.com" class="btn btn-solid" style="margin-top:28px; background:#fff; color:var(--burgundy-deeper); border-color:#fff;">M'écrire</a>
+    <div class="contact-icon-row">
+      <div class="c-row">
+        <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a>
+      </div>
+      <div class="c-row">
+        <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
+        <span class="c-val">Téléphone à compléter</span>
+      </div>
+      <div class="c-row">
+        <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5v6M7.5 7.8v.01M12 16.5v-4c0-1.2.8-2 2-2s2 .8 2 2v4M12 12.5v4"/></svg></span>
+        <a href="https://www.linkedin.com/in/karima-mesticou-b89747153" target="_blank" rel="noopener">linkedin.com/in/karima-mesticou-b89747153</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Karima Fejjari Mesticou</span>
+      <span>Portfolio mis à jour en 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
