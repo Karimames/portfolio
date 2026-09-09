@@ -318,6 +318,44 @@
   .edu-note{margin-top:14px; font-size:0.88rem; color:var(--stone-light); font-style:italic;}
   .edu-ellipsis{margin-top:10px; font-size:1.1rem; letter-spacing:0.12em; color:var(--stone-light);}
 
+  .edu-quote{
+    margin-top:20px; padding:16px 20px; border-left:3px solid var(--burgundy);
+    background:var(--blush);
+  }
+  .edu-quote-label{
+    display:block; font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+    color:var(--burgundy); text-transform:uppercase; margin-bottom:8px;
+  }
+  .edu-quote p{
+    font-family:'Fraunces',serif; font-style:italic; font-size:0.97rem;
+    color:var(--ink); line-height:1.6; margin:0;
+  }
+  .edu-quote-src{
+    display:block; margin-top:10px; font-size:0.78rem; color:var(--stone-light); font-style:normal;
+  }
+
+  .edu-project{
+    margin-top:18px; display:flex; align-items:flex-start; gap:14px;
+    padding:16px 18px; border:1px solid var(--line); border-radius:2px;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .edu-project:hover{border-color:var(--burgundy); box-shadow:0 12px 26px -18px rgba(92,12,36,0.4);}
+  .edu-project .ep-icon{
+    width:38px; height:38px; border-radius:50%; flex-shrink:0;
+    background:var(--burgundy); display:flex; align-items:center; justify-content:center;
+  }
+  .edu-project .ep-icon svg{width:18px; height:18px; stroke:#fff;}
+  .edu-project .ep-text{flex:1;}
+  .edu-project .ep-tag{
+    display:block; font-size:0.7rem; font-weight:700; letter-spacing:0.06em;
+    color:var(--burgundy); text-transform:uppercase; margin-bottom:4px;
+  }
+  .edu-project h4{
+    font-family:'Inter',sans-serif; font-weight:700; font-size:0.96rem; color:var(--ink); margin:0 0 4px;
+  }
+  .edu-project p{font-size:0.88rem; color:var(--stone); margin:0 0 8px;}
+  .edu-project a.ep-link{font-size:0.85rem; font-weight:600;}
+
   .edu-mini-row{
     max-width:var(--maxw); margin:36px auto 0; padding:0 28px;
     display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;
@@ -387,11 +425,11 @@
   <div class="hero-inner">
     <span class="eyebrow-tag fade-in">Portfolio professionnel</span>
     <h1 class="fade-in">Chirurgie clinique, recherche et formation</h1>
-    <p class="hero-role fade-in">Médecin dentiste, Recherche clinique, Formation </p>
+    <p class="hero-role fade-in">Médecin dentiste, conseillère clinique et formation</p>
     <p class="hero-lede fade-in">Quinze ans à porter plusieurs rôles en même temps, la pratique clinique, la recherche et la formation des praticiens. Ce qui me fait avancer, c'est de sortir de ma zone de confort et de me fixer de nouveaux objectifs, toujours dans un seul but, la sécurité et les soins aux patients.</p>
     <div class="stat-row fade-in">
       <div class="stat"><b>15 ans</b><span>d'expérience clinique et industrielle</span></div>
-      <div class="stat"><b>5 ans</b><span>en recherche, communication clinique et formation sur dispositifs médicaux</span></div>
+      <div class="stat"><b>5 ans</b><span>en recherche et communication clinique sur dispositifs médicaux</span></div>
       <div class="stat"><b>3 rôles</b><span>de formatrice auprès de praticiens</span></div>
       <div class="stat"><b>6</b><span>diplômes universitaires et certificats</span></div>
     </div>
@@ -481,21 +519,26 @@
         <div class="tl-sub">
           <div class="tl-sub-item">
             <h4>Recherche et développement</h4>
-            <p>Contribution au développement expérimental et à de nouvelles fonctionnalités logicielles, préparation des protocoles de test, analyse des données scientifiques et cliniques, évaluation technique et clinique de la performance du dispositif.</p>
+            <p>Contribution au développement expérimental et à l'établissement de nouvelles fonctionnalités logicielles, préparation des protocoles d'expériences et de tests, gestion et analyse des données scientifiques et cliniques liées au développement, assistance aux chercheurs pendant les expériences, support à l'utilisation des nouveaux prototypes, contribution à l'évaluation technique et clinique de la performance du dispositif.</p>
           </div>
           <div class="tl-sub-item">
             <h4>Recherche et suivi clinique</h4>
-            <p>Définition et suivi du plan de recherche, suivi des projets universitaires, rédaction de contenus et de publications à partir des données cliniques, en lien avec les équipes réglementaires et recherche et développement.</p>
+            <p>Évaluation des besoins avec les parties prenantes internes, recherche et développement, réglementaire, consolidation et suivi d'un plan de recherche, suivi des projets universitaires, suivi des dispositifs de prêt et valorisation de l'investissement à travers les publications et retours d'expérience des praticiens, création de contenus et de publications à l'appui des données cliniques.</p>
+          </div>
+          <div class="tl-sub-item">
+            <h4>Démonstration produit</h4>
+            <p>Prise de contact avec les prospects, réalisation des démonstrations, envoi, suivi et relance des devis, présentation du dispositif lors de l'ensemble des événements scientifiques.</p>
           </div>
           <div class="tl-sub-item">
             <h4>Formation des praticiens</h4>
-            <p>Formation des dentistes utilisateurs, à distance et en présentiel, support clinique sur l'analyse de cas et l'élaboration du plan de traitement.</p>
+            <p>Formation à distance ou en présentiel des praticiens à la suite de l'acquisition du dispositif, support clinique par l'analyse des cas cliniques et l'accompagnement dans l'élaboration du plan de traitement.</p>
           </div>
           <div class="tl-sub-item">
-            <h4>Suivi clients et démonstrations</h4>
-            <p>Présentation du dispositif lors d'événements scientifiques, suivi de la satisfaction des praticiens utilisateurs, dans le respect du système qualité certifié ISO 13485.</p>
+            <h4>Suivi clients</h4>
+            <p>Garantie, dans son périmètre de responsabilité, de la pleine satisfaction de la clientèle, réalisation d'enquêtes de satisfaction auprès des clients.</p>
           </div>
         </div>
+        <p style="margin-top:16px;">Ce poste s'exerce dans le respect du système de gestion de la qualité de l'entreprise, certifié ISO 13485, avec un compte rendu régulier au Team Clinical Manager.</p>
       </div>
     </div>
 
@@ -625,6 +668,24 @@
         <li>Mémoire de recherche et stage avec portfolio de développement de dispositif</li>
       </ul>
       <p class="edu-ellipsis">…</p>
+
+      <div class="edu-quote">
+        <span class="edu-quote-label">Extrait du mémoire</span>
+        <p>Ce mémoire examine les attitudes et l'utilité perçue du e-learning pour le développement professionnel continu chez cent quarante cinq chirurgiens-dentistes en exercice en France, interrogés entre le 15 mars et le 11 mai 2026, au moment où une réforme institutionnelle supprimait l'indemnisation pour la formation continue asynchrone. Les attitudes varient significativement selon la zone géographique et le mode d'exercice, davantage que selon les caractéristiques individuelles. Le maintien des compétences et l'actualisation des connaissances constituent les prédicteurs dominants de l'intention d'usage. Les praticiens ayant identifié la réforme comme un obstacle déclarent paradoxalement une intention d'usage plus élevée que les autres, un résultat interprété à la lumière de la réactance psychologique et de la distinction entre motivation intrinsèque et extrinsèque.</p>
+        <span class="edu-quote-src">Développement professionnel continu en e-learning chez les chirurgiens dentistes, attitudes et utilité perçue pour le maintien et l'actualisation des connaissances et des compétences, résumé du mémoire</span>
+      </div>
+
+      <div class="edu-project">
+        <div class="ep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </div>
+        <div class="ep-text">
+          <span class="ep-tag">Exemple de réalisation</span>
+          <h4>DentoBot, chatbot d'évaluation des urgences dentaires</h4>
+          <p>Conçu dans le cadre du module Scénarisation et médiatisation de cours. Le chatbot identifie les véritables urgences à partir des symptômes rapportés, douleur, saignement, gonflement, choc, prothèse cassée, et oriente le patient vers un rendez-vous adapté ou des conseils immédiats.</p>
+          <a class="ep-link" href="DentoBot.pdf" target="_blank" rel="noopener">Voir la fiche projet (PDF) →</a>
+        </div>
+      </div>
     </div>
 
     <div class="edu-card">
@@ -676,6 +737,12 @@
         <li>Complications et suivi, péri-implantite, prothèse sur implants</li>
       </ul>
       <p class="edu-ellipsis">…</p>
+
+      <div class="edu-quote">
+        <span class="edu-quote-label">Extrait du mémoire</span>
+        <p>La pose d'implants dans les zones postérieures sous sinusiennes sur un maxillaire résorbé représente un défi quotidien pour le clinicien, en raison du faible volume d'os disponible et de sa faible qualité mécanique. La littérature montre que le taux de succès des implants courts rejoint aujourd'hui celui des implants plus longs. Certains paramètres peuvent néanmoins influencer ce taux de succès, et il est essentiel de les identifier, de les évaluer et d'en tenir compte lors du choix thérapeutique.</p>
+        <span class="edu-quote-src">Des maxillaires postérieurs atrophiés, paramètres de réussite des implants courts, résumé du mémoire</span>
+      </div>
     </div>
 
     <div class="edu-card">
@@ -721,11 +788,11 @@
     <div class="contact-icon-row">
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-        <a href="mailto:votre.email@exemple.com">fejjari_karima@hotmail.fr</a>
+        <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a>
       </div>
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
-        <span class="c-val">+33608897771</span>
+        <span class="c-val">Téléphone à compléter</span>
       </div>
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5v6M7.5 7.8v.01M12 16.5v-4c0-1.2.8-2 2-2s2 .8 2 2v4M12 12.5v4"/></svg></span>
