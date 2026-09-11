@@ -6,18 +6,18 @@
 <title>Karima Fejjari Mesticou — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --burgundy:#B11B44;
-    --burgundy-dark:#7A1030;
-    --burgundy-deeper:#5C0C24;
-    --blush:#FBF1F4;
-    --ink:#211619;
-    --stone:#5B5257;
-    --stone-light:#8A8085;
+    --burgundy:#146C8C;
+    --burgundy-dark:#0F4F66;
+    --burgundy-deeper:#0A3542;
+    --blush:#EEF5F6;
+    --ink:#111A22;
+    --stone:#4A5560;
+    --stone-light:#8B98A3;
     --paper:#FFFFFF;
-    --line:#EADFE2;
+    --line:#E1E8EA;
     --maxw:840px;
   }
   *{box-sizing:border-box;}
@@ -28,15 +28,16 @@
   }
   body{
     margin:0;
-    font-family:'Inter',sans-serif;
+    font-family:'Plus Jakarta Sans',sans-serif;
     color:var(--ink);
     background:var(--paper);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,.display{
-    font-family:'Fraunces',serif;
-    font-weight:600;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
     color:var(--ink);
     margin:0;
   }
@@ -64,7 +65,7 @@
     gap:16px;
   }
   .nav-name{
-    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:1.05rem;
     color:var(--ink); white-space:nowrap;
   }
   .nav-links{
@@ -102,11 +103,19 @@
   .hero{
     position:relative; overflow:hidden;
     padding:88px 0 96px;
-    background:linear-gradient(180deg,var(--blush) 0%, var(--paper) 78%);
+    background:
+      radial-gradient(circle, rgba(20,108,140,0.14) 1px, transparent 1px),
+      linear-gradient(180deg,var(--blush) 0%, var(--paper) 78%);
+    background-size:22px 22px, 100% 100%;
+    background-position:-6px -6px, 0 0;
   }
   .hero-inner{
     max-width:1080px; margin:0 auto; padding:0 28px;
     position:relative; z-index:2;
+  }
+  .hero-rule{
+    width:56px; height:5px; background:var(--burgundy); border-radius:3px;
+    margin-bottom:22px;
   }
   .eyebrow-tag{
     display:inline-block; font-size:0.82rem; font-weight:600;
@@ -119,7 +128,7 @@
     max-width:26ch;
   }
   .hero-role{
-    font-family:'Fraunces',serif; font-style:italic; font-weight:500;
+    font-family:'Plus Jakarta Sans',sans-serif; font-style:italic; font-weight:500;
     color:var(--burgundy); font-size:clamp(1.15rem,2.4vw,1.5rem);
     margin-top:14px;
   }
@@ -132,7 +141,7 @@
   }
   .btn{
     display:inline-flex; align-items:center; gap:8px;
-    padding:13px 26px; border-radius:2px; font-weight:600; font-size:0.95rem;
+    padding:13px 26px; border-radius:7px; font-weight:600; font-size:0.95rem;
     border:1.5px solid var(--burgundy);
     transition:background .15s ease, color .15s ease;
   }
@@ -141,24 +150,18 @@
   .btn-ghost{color:var(--burgundy); background:transparent;}
   .btn-ghost:hover{background:var(--blush); text-decoration:none;}
 
-  .kinematic{
-    position:absolute; right:-4%; top:8%; width:62%; max-width:640px;
-    opacity:0.9; z-index:1;
-  }
-  @media (max-width:900px){ .kinematic{ opacity:0.35; right:-18%; top:30%; } }
-
   .id-badge{
     position:absolute; right:9%; top:14%; z-index:3;
     display:flex; align-items:center; gap:12px;
-    background:#fff; border:1px solid var(--line); border-radius:3px;
+    background:#fff; border:1px solid var(--line); border-radius:10px;
     padding:12px 18px 12px 12px;
-    box-shadow:0 14px 30px -12px rgba(92,12,36,0.28);
+    box-shadow:0 14px 30px -12px rgba(10,53,66,0.28);
   }
   .id-badge .mono{
-    width:46px; height:46px; border-radius:50%;
+    width:46px; height:46px; border-radius:10px;
     background:var(--burgundy); color:#fff;
     display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-weight:600; font-size:1rem;
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:1rem;
     flex-shrink:0;
   }
   .id-badge .id-text{line-height:1.3;}
@@ -169,7 +172,7 @@
   .pillar-icon{
     width:34px; height:34px; margin-bottom:16px;
     display:flex; align-items:center; justify-content:center;
-    border-radius:50%; background:#fff; border:1.5px solid var(--burgundy);
+    border-radius:9px; background:#fff; border:1.5px solid var(--burgundy);
   }
   .pillar-icon svg{width:18px; height:18px;}
 
@@ -178,14 +181,14 @@
 
   .edu-card{transition:box-shadow .18s ease, transform .18s ease; will-change:transform;}
   .edu-card:hover{
-    box-shadow:0 20px 40px -22px rgba(92,12,36,0.35);
+    box-shadow:0 20px 40px -22px rgba(10,53,66,0.35);
     transform:translateY(-2px);
   }
 
   .contact-icon-row{margin-top:32px; display:grid; gap:14px;}
   .contact-icon-row .c-row{display:flex; align-items:center; gap:12px;}
   .contact-icon-row .c-icon{
-    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    width:34px; height:34px; border-radius:9px; flex-shrink:0;
     background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.28);
     display:flex; align-items:center; justify-content:center;
   }
@@ -200,7 +203,7 @@
     padding-top:32px; border-top:1px solid var(--line);
   }
   .stat b{
-    display:block; font-family:'Fraunces',serif; font-size:1.9rem; color:var(--burgundy);
+    display:block; font-family:'Plus Jakarta Sans',sans-serif; font-size:1.9rem; color:var(--burgundy);
     font-weight:600;
   }
   .stat span{font-size:0.85rem; color:var(--stone); max-width:20ch; display:block; margin-top:2px;}
@@ -220,33 +223,37 @@
   .about-body{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
   .about-body p{font-size:1.08rem; color:var(--ink); margin:0 0 20px;}
   .about-body p:first-of-type{
-    font-family:'Fraunces',serif; font-size:1.28rem; font-weight:500; line-height:1.5;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:1.1rem; font-weight:600; line-height:1.6;
     color:var(--ink);
   }
 
   /* ---------- SKILLS ---------- */
   .pillars{
-    max-width:1080px; margin:0 auto; padding:0 28px;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    max-width:1200px; margin:0 auto; padding:0 28px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
   }
   .pillar{
-    padding:0 32px; border-left:2px solid var(--line);
+    padding:0 26px; border-left:2px solid var(--line);
   }
   .pillar:first-child{border-left:none; padding-left:0;}
   .pillar .pillar-num{
-    font-family:'Fraunces',serif; color:var(--line); font-size:0.85rem; font-weight:600;
+    font-family:'Plus Jakarta Sans',sans-serif; color:var(--line); font-size:0.85rem; font-weight:600;
     margin-bottom:14px;
   }
-  .pillar h3{font-size:1.3rem; margin-bottom:14px;}
+  .pillar h3{font-size:1.2rem; margin-bottom:14px;}
   .pillar ul{margin:0; padding:0; list-style:none;}
   .pillar li{
-    font-size:0.94rem; color:var(--stone); padding:9px 0 9px 18px;
+    font-size:0.92rem; color:var(--stone); padding:9px 0 9px 18px;
     position:relative; border-top:1px solid var(--line);
   }
   .pillar li:first-child{border-top:none;}
   .pillar li::before{
     content:''; position:absolute; left:0; top:17px;
     width:6px; height:6px; border-radius:50%; background:var(--burgundy);
+  }
+  @media (max-width:920px){
+    .pillars{grid-template-columns:1fr 1fr; row-gap:36px;}
+    .pillar:nth-child(3){border-left:none; padding-left:0;}
   }
   @media (max-width:760px){
     .pillars{grid-template-columns:1fr; gap:36px;}
@@ -273,19 +280,19 @@
     font-size:0.85rem; color:var(--stone-light); font-weight:600; white-space:nowrap;
   }
   .tl-org{
-    font-family:'Fraunces',serif; font-style:italic; color:var(--burgundy);
+    font-family:'Plus Jakarta Sans',sans-serif; font-style:italic; color:var(--burgundy);
     font-size:1rem; margin-top:4px;
   }
   .org-row{display:flex; align-items:center; gap:10px; margin-top:6px;}
   .org-row .tl-org, .org-row .edu-org{margin-top:0;}
   .org-badge{
-    width:30px; height:30px; border-radius:50%; flex-shrink:0;
+    width:30px; height:30px; border-radius:8px; flex-shrink:0;
     background:#fff; border:1.3px solid var(--burgundy); color:var(--burgundy);
     display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-weight:700; font-size:0.62rem; letter-spacing:0.01em;
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:0.62rem; letter-spacing:0.01em;
   }
   .edu-logo-box{
-    width:44px; height:44px; border-radius:4px; flex-shrink:0;
+    width:44px; height:44px; border-radius:8px; flex-shrink:0;
     background:#fff; border:1px solid var(--line);
     display:flex; align-items:center; justify-content:center; padding:5px;
     overflow:hidden;
@@ -293,8 +300,8 @@
   .edu-logo-box img{max-width:100%; max-height:100%; object-fit:contain;}
   .tl-badge{
     display:inline-block; margin-top:10px; font-size:0.74rem; font-weight:600;
-    color:var(--burgundy); background:var(--blush); border:1px solid #F0D8DF;
-    padding:4px 10px; border-radius:2px; letter-spacing:0.01em;
+    color:var(--burgundy); background:var(--blush); border:1px solid #CDE3E8;
+    padding:4px 10px; border-radius:7px; letter-spacing:0.01em;
   }
   .tl-body{margin-top:14px; color:var(--stone); font-size:0.97rem;}
   .tl-body p{margin:0 0 12px;}
@@ -309,7 +316,7 @@
   /* ---------- EDUCATION ---------- */
   .edu-grid{max-width:var(--maxw); margin:0 auto; padding:0 28px; display:grid; gap:28px;}
   .edu-card{
-    border:1px solid var(--line); border-radius:2px; padding:28px 30px;
+    border:1px solid var(--line); border-radius:7px; padding:28px 30px;
     background:var(--paper);
   }
   .edu-top{
@@ -317,7 +324,7 @@
   }
   .edu-top h3{font-size:1.15rem; max-width:34ch;}
   .edu-dates{font-size:0.85rem; color:var(--stone-light); font-weight:600; white-space:nowrap;}
-  .edu-org{font-family:'Fraunces',serif; font-style:italic; color:var(--burgundy); font-size:0.96rem; margin-top:5px;}
+  .edu-org{font-family:'Plus Jakarta Sans',sans-serif; font-style:italic; color:var(--burgundy); font-size:0.96rem; margin-top:5px;}
   .edu-highlights{
     margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:8px 26px;
     list-style:none; padding:0;
@@ -342,7 +349,7 @@
     color:var(--burgundy); text-transform:uppercase; margin-bottom:8px;
   }
   .edu-quote p{
-    font-family:'Fraunces',serif; font-style:italic; font-size:0.97rem;
+    font-family:'Plus Jakarta Sans',sans-serif; font-style:italic; font-size:0.97rem;
     color:var(--ink); line-height:1.6; margin:0;
   }
   .edu-quote-src{
@@ -351,12 +358,12 @@
 
   .edu-project{
     margin-top:18px; display:flex; align-items:flex-start; gap:14px;
-    padding:16px 18px; border:1px solid var(--line); border-radius:2px;
+    padding:16px 18px; border:1px solid var(--line); border-radius:7px;
     transition:border-color .15s ease, box-shadow .15s ease;
   }
-  .edu-project:hover{border-color:var(--burgundy); box-shadow:0 12px 26px -18px rgba(92,12,36,0.4);}
+  .edu-project:hover{border-color:var(--burgundy); box-shadow:0 12px 26px -18px rgba(10,53,66,0.4);}
   .edu-project .ep-icon{
-    width:38px; height:38px; border-radius:50%; flex-shrink:0;
+    width:38px; height:38px; border-radius:9px; flex-shrink:0;
     background:var(--burgundy); display:flex; align-items:center; justify-content:center;
   }
   .edu-project .ep-icon svg{width:18px; height:18px; stroke:#fff;}
@@ -371,6 +378,27 @@
   .edu-project p{font-size:0.88rem; color:var(--stone); margin:0 0 8px;}
   .edu-project a.ep-link{font-size:0.85rem; font-weight:600;}
 
+  .job-detail{margin-top:18px;}
+  .cpd-list{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .cpd-list li{
+    font-size:0.92rem; color:var(--stone); padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .cpd-list li:last-child{border-bottom:none; padding-bottom:0;}
+  .cpd-list b{color:var(--ink); font-weight:600;}
+  .job-detail summary{
+    list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+    font-size:0.92rem; font-weight:600; color:var(--burgundy);
+    padding:10px 0; user-select:none;
+  }
+  .job-detail summary::-webkit-details-marker{display:none;}
+  .job-detail summary .chev{
+    display:inline-block; transition:transform .2s ease; font-size:0.8rem;
+  }
+  .job-detail[open] summary .chev{transform:rotate(180deg);}
+  .job-detail summary:hover{text-decoration:underline;}
+  .job-detail-body{padding-top:6px;}
+
   .case-study{
     margin-top:22px; border:1px solid var(--line); border-left:3px solid var(--burgundy);
     padding:22px 24px; background:#fff;
@@ -380,7 +408,7 @@
     color:var(--burgundy); text-transform:uppercase; margin-bottom:8px;
   }
   .case-study h4{
-    font-family:'Fraunces',serif; font-weight:600; font-size:1.08rem; color:var(--ink);
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:1.08rem; color:var(--ink);
     margin:0 0 16px;
   }
   .case-study-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px 24px;}
@@ -412,11 +440,11 @@
 
   /* ---------- CONTACT / FOOTER ---------- */
   footer{
-    background:var(--burgundy-deeper); color:#F6E9ED; padding:72px 0 40px;
+    background:var(--burgundy-deeper); color:#E7F2F4; padding:72px 0 40px;
   }
   .footer-inner{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
   footer h2{color:#fff; font-size:clamp(1.6rem,3vw,2.1rem); max-width:20ch; line-height:1.2;}
-  footer p{color:#E9C6D2; max-width:46ch; margin-top:16px; font-size:1rem;}
+  footer p{color:#BFDCE3; max-width:46ch; margin-top:16px; font-size:1rem;}
   .contact-list{margin-top:32px; display:grid; gap:12px;}
   .contact-list a, .contact-list span{
     color:#fff; font-size:1rem; font-weight:500; display:inline-block;
@@ -425,10 +453,23 @@
   .contact-list a:hover{border-color:#fff; text-decoration:none;}
   .foot-base{
     margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.18);
-    font-size:0.8rem; color:#CE96A6; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.8rem; color:#6E96A3; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
   }
 
   .fade-in{animation:fadeUp .7s ease both;}
+
+  .to-top{
+    position:fixed; right:24px; bottom:24px; z-index:60;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--burgundy); color:#fff; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px -8px rgba(15,42,66,0.45);
+    opacity:0; pointer-events:none; transform:translateY(8px);
+    transition:opacity .2s ease, transform .2s ease, background .15s ease;
+  }
+  .to-top.show{opacity:1; pointer-events:auto; transform:translateY(0);}
+  .to-top:hover{background:var(--burgundy-dark);}
+  .to-top svg{width:18px; height:18px;}
   @keyframes fadeUp{
     from{opacity:0; transform:translateY(14px);}
     to{opacity:1; transform:translateY(0);}
@@ -446,20 +487,15 @@
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#experience">Expérience</a></li>
       <li><a href="#formation">Formation</a></li>
+      <li><a href="#formations-continues">Formations continues</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="CV_Karima_Fejjari_Mesticou.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+      <li><a href="https://www.linkedin.com/in/karima-mesticou-b89747153" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
   </div>
 </header>
 
 <section class="hero">
-  <svg class="kinematic" viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M0 220 C 60 180, 90 260, 140 220 C 190 180, 210 100, 260 120 C 310 140, 320 240, 370 210 C 420 180, 430 90, 480 110 C 530 130, 540 200, 600 170"
-      stroke="#B11B44" stroke-width="2.5" opacity="0.5"/>
-    <path d="M0 260 C 70 235, 100 290, 150 265 C 200 240, 220 190, 270 205 C 320 220, 330 280, 380 260 C 430 240, 440 175, 490 190 C 540 205, 550 250, 600 235"
-      stroke="#B11B44" stroke-width="2" opacity="0.28"/>
-    <circle cx="260" cy="120" r="4" fill="#B11B44" opacity="0.7"/>
-    <circle cx="480" cy="110" r="4" fill="#B11B44" opacity="0.7"/>
-  </svg>
   <div class="id-badge" aria-hidden="true">
     <div class="mono">KFM</div>
     <div class="id-text">
@@ -468,8 +504,9 @@
     </div>
   </div>
   <div class="hero-inner">
-    <h1 class="fade-in">Cheffe de projet, recherche, communication clinique, formation</h1>
-    <p class="hero-role fade-in">Chirurgienne dentiste, conseillère clinique</p>
+    <div class="hero-rule fade-in"></div>
+    <h1 class="fade-in">Cheffe de projet</h1>
+    <p class="hero-role fade-in">Recherche clinique, formation et pratique</p>
     <p class="hero-lede fade-in">Quinze ans à porter plusieurs rôles en même temps, la pratique clinique, la recherche et la formation des praticiens. Ce qui me fait avancer, c'est de sortir de ma zone de confort et de me fixer de nouveaux objectifs, toujours dans un seul but, la sécurité et les soins aux patients.</p>
     <div class="stat-row fade-in">
       <div class="stat"><b>15 ans</b><span>d'expérience clinique et industrielle</span></div>
@@ -487,24 +524,24 @@
   </div>
   <div class="about-body">
     <p>Je suis chirurgienne dentiste, avec un parcours qui va de la pratique clinique à la recherche, en passant par la formation des professionnels de santé.</p>
-    <p>J'aime les environnements où il faut porter plusieurs sujets à la fois, un protocole d'étude clinique un jour, une session de formation le lendemain, une analyse de cas clinique le jour suivant. Cette capacité à passer d'un rôle à l'autre, tout en gardant un fil conducteur clinique, est ce qui revient dans chacune de mes expériences.</p>
-    <p>Sortir de ma zone de confort ne m'effraie pas, c'est souvent là que j'apprends le plus. Je suis aujourd'hui dans une dynamique de construction, je me fixe des objectifs et je travaille pour les atteindre, en gardant toujours le même repère, la sécurité et les soins aux patients.</p>
-    <p>Une constante revient dans mon parcours, plusieurs des postes que j'ai occupés ont été créés spécialement autour de mon profil, à la croisée de la clinique, de la recherche et de la formation.</p>
-    <p>Cette dynamique se retrouve aussi dans mon rapport aux professionnels de santé. Que ce soit comme formatrice technico clinique, coordinatrice de centre de formation, ou aujourd'hui en pilotant l'évaluation clinique d'un dispositif médical, je suis en contact constant avec les praticiens que je forme et que j'accompagne, et leurs retours guident directement la façon dont je fais évoluer les formations, les protocoles et les produits.</p>
+    <p>Mon parcours s'est construit dans des environnements qui demandent de porter plusieurs sujets en parallèle, un protocole d'étude clinique, une session de formation, une analyse de cas clinique, souvent au cours d'une même semaine. Cette capacité à passer d'un rôle à l'autre, tout en gardant un fil conducteur clinique, structure chacune de mes expériences.</p>
+    <p>Je recherche les environnements qui me poussent au delà de mes acquis, là où la progression est la plus rapide. Je me fixe des objectifs précis et je construis les moyens de les atteindre, en gardant un repère constant, la sécurité et la qualité des soins apportés aux patients.</p>
+    <p>Une constante traverse mon parcours, plusieurs des postes que j'ai occupés ont été construits autour de ce profil, à la croisée de la clinique, de la recherche et de la formation.</p>
+    <p>Cette même logique caractérise ma relation aux professionnels de santé. Formatrice technico clinique, coordinatrice de centre de formation, aujourd'hui responsable de l'évaluation clinique d'un dispositif médical, je reste en contact direct avec les praticiens que je forme et que j'accompagne. Leurs retours orientent directement l'évolution des formations, des protocoles et des produits.</p>
   </div>
 </section>
 
 <section id="competences" class="tint">
   <div class="sec-head">
     <span class="sec-kicker">Compétences</span>
-    <h2>Trois piliers, un même fil conducteur</h2>
-    <p>La clinique nourrit la recherche, la recherche nourrit la formation, et la formation ramène toujours vers le terrain.</p>
+    <h2>Quatre piliers, un même fil conducteur</h2>
+    <p>La clinique nourrit la recherche, la recherche nourrit la formation, et les trois se rejoignent dans le pilotage de projet.</p>
   </div>
   <div class="pillars">
     <div class="pillar">
       <div class="pillar-num">01</div>
       <div class="pillar-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.4 0-4.2 1.7-4.2 4.3 0 1.8.5 2.6.5 4.6 0 2.6-.8 4.6-.8 6.7 0 1.2.7 2.1 1.7 2.1 1.4 0 1.6-2.4 2.1-5.2.2-1 .4-1.5.7-1.5s.5.5.7 1.5c.5 2.8.7 5.2 2.1 5.2 1 0 1.7-.9 1.7-2.1 0-2.1-.8-4.1-.8-6.7 0-2 .5-2.8.5-4.6C16.2 4.7 14.4 3 12 3Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#146C8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2.4 0-4.2 1.7-4.2 4.3 0 1.8.5 2.6.5 4.6 0 2.6-.8 4.6-.8 6.7 0 1.2.7 2.1 1.7 2.1 1.4 0 1.6-2.4 2.1-5.2.2-1 .4-1.5.7-1.5s.5.5.7 1.5c.5 2.8.7 5.2 2.1 5.2 1 0 1.7-.9 1.7-2.1 0-2.1-.8-4.1-.8-6.7 0-2 .5-2.8.5-4.6C16.2 4.7 14.4 3 12 3Z"/></svg>
       </div>
       <h3>Clinique</h3>
       <ul>
@@ -516,7 +553,7 @@
     <div class="pillar">
       <div class="pillar-num">02</div>
       <div class="pillar-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-5-5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#146C8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-5-5"/></svg>
       </div>
       <h3>Recherche</h3>
       <ul>
@@ -529,7 +566,7 @@
     <div class="pillar">
       <div class="pillar-num">03</div>
       <div class="pillar-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#B11B44" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13Z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5v-13Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#146C8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13Z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5v-13Z"/></svg>
       </div>
       <h3>Formation</h3>
       <ul>
@@ -539,6 +576,19 @@
         <li>Master en ingénierie numérique de la formation</li>
       </ul>
     </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#146C8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 3.5h6a1 1 0 0 1 1 1V6H8V4.5a1 1 0 0 1 1-1Z"/><path d="M8.3 12.2l2 2 3.7-4"/><path d="M8.3 17h7.4"/></svg>
+      </div>
+      <h3>Pilotage de projet</h3>
+      <ul>
+        <li>Cadrage, planification et suivi de projets jusqu'à leur livraison</li>
+        <li>Coordination d'équipes pluridisciplinaires, recherche et développement, réglementaire, direction</li>
+        <li>Anticipation des risques et levée des blocages</li>
+        <li>Relation client, de la démonstration au suivi de satisfaction</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -546,7 +596,7 @@
   <div class="sec-head">
     <span class="sec-kicker">Expérience professionnelle</span>
     <h2>Un fil rouge, rester au contact des praticiens</h2>
-    <p>Chaque poste m'a maintenue en lien direct avec des professionnels de santé, comme formatrice, comme coordinatrice ou comme interlocutrice clinique.</p>
+    <p>La plupart de mes postes m'ont maintenue en lien direct avec des professionnels de santé, comme formatrice, comme coordinatrice ou comme interlocutrice clinique.</p>
   </div>
   <div class="timeline">
 
@@ -558,7 +608,11 @@
       <div class="org-row"><span class="org-badge">MJ</span><div class="tl-org">MODJAW, Villeurbanne</div></div>
       <span class="tl-badge">Formation et accompagnement des praticiens</span>
       <div class="tl-body">
-        <p>Poste officiellement intitulé Project Manager, Research and Clinical Communication, rattaché au département clinique. Il couvre cinq volets, du développement produit jusqu'au suivi client. Sur certains projets, je suis le lead, chargée de coordonner les interlocuteurs et d'organiser l'avancement, à l'aide d'un tableau de suivi partagé avec les personnes concernées.</p>
+        <p>Poste officiellement intitulé Project Manager, Research and Clinical Communication, rattaché au département clinique. Il couvre cinq volets, du développement produit jusqu'au suivi client. Sur certains projets, je suis le lead, chargée de coordonner les interlocuteurs et d'organiser l'avancement.</p>
+
+        <details class="job-detail">
+          <summary><span class="chev">▾</span> Voir le détail complet du poste, missions, projet et publications</summary>
+          <div class="job-detail-body">
         <div class="tl-sub">
           <div class="tl-sub-item">
             <h4>Recherche et développement</h4>
@@ -578,7 +632,7 @@
           </div>
           <div class="tl-sub-item">
             <h4>Formation des praticiens</h4>
-            <p>Formation à distance ou en présentiel des praticiens à la suite de l'acquisition du dispositif, support clinique par l'analyse des cas cliniques et l'accompagnement dans l'élaboration du plan de traitement.</p>
+            <p>Formation à distance et en présentiel des praticiens à la suite de l'acquisition du dispositif, support clinique par l'analyse des cas cliniques et l'accompagnement dans l'élaboration du plan de traitement.</p>
           </div>
           <div class="tl-sub-item">
             <h4>Encadrement et formation interne</h4>
@@ -637,6 +691,8 @@
             <li>Contribution au <a href="https://modjaw.com/fr/ressources/blog-4d.html" target="_blank" rel="noopener">Blog 4D de MODJAW</a>, protocoles cliniques et workflows numériques</li>
           </ul>
         </div>
+          </div>
+        </details>
       </div>
     </div>
 
@@ -648,7 +704,7 @@
       <div class="org-row"><span class="org-badge">CI</span><div class="tl-org">Centre d'implantologie et de chirurgie orale, Lyon</div></div>
       <span class="tl-badge">Formation et accompagnement des praticiens</span>
       <div class="tl-body">
-        <p>Participation à la mise en place des études cliniques, dont une étude clinique pour l'évaluation de l'intégrité de la greffe osseuse à dix ans dans un protocole de soulevé de sinus. Organisation de la formation en implantologie et animation de soirées scientifiques avec les différents acteurs du secteur.</p>
+        <p>Participation à la mise en place des études cliniques, dont une étude pour l'évaluation de l'intégrité de la greffe osseuse à dix ans dans un protocole de soulevé de sinus. Organisation de la formation en implantologie et animation de soirées scientifiques avec les différents acteurs du secteur.</p>
       </div>
     </div>
 
@@ -681,9 +737,6 @@
         <span class="tl-dates">Janv. – Déc. 2017</span>
       </div>
       <div class="org-row"><span class="org-badge">HEH</span><div class="tl-org">Hôpital Édouard Herriot, Hospices Civils de Lyon</div></div>
-      <div class="tl-body">
-        <p>Pratique de la chirurgie orale au sein d'un service hospitalier universitaire.</p>
-      </div>
     </div>
 
     <div class="tl-item">
@@ -767,6 +820,9 @@
       </ul>
       <p class="edu-ellipsis">…</p>
 
+      <details class="job-detail">
+        <summary><span class="chev">▾</span> Voir l'extrait de mémoire et un exemple de réalisation</summary>
+        <div class="job-detail-body">
       <div class="edu-project">
         <div class="ep-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
@@ -790,6 +846,8 @@
           <a class="ep-link" href="DentoBot.pdf" target="_blank" rel="noopener">Voir la fiche projet (PDF) →</a>
         </div>
       </div>
+        </div>
+      </details>
     </div>
 
     <div class="edu-card">
@@ -842,6 +900,9 @@
       </ul>
       <p class="edu-ellipsis">…</p>
 
+      <details class="job-detail">
+        <summary><span class="chev">▾</span> Voir l'extrait de mémoire</summary>
+        <div class="job-detail-body">
       <div class="edu-project">
         <div class="ep-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
@@ -853,6 +914,8 @@
           <a class="ep-link" href="Memoire_DIU_Implantologie.pdf" target="_blank" rel="noopener">Lire l'extrait (PDF) →</a>
         </div>
       </div>
+        </div>
+      </details>
     </div>
 
     <div class="edu-card">
@@ -889,20 +952,80 @@
   </div>
 </section>
 
+<section id="formations-continues">
+  <div class="sec-head">
+    <h2>Formations continues</h2>
+  </div>
+  <div class="timeline">
+    <details class="job-detail">
+      <summary><span class="chev">▾</span> Voir la liste des formations continues (19)</summary>
+      <div class="job-detail-body">
+        <ul class="cpd-list">
+          <li><b>17 juin 2025</b>, formation, comprendre les exigences réglementaires de l'évaluation clinique pour choisir la bonne voie, GMED</li>
+          <li><b>18 mars 2025</b>, formation, réaliser une évaluation clinique des dispositifs médicaux selon la voie de la littérature, GMED</li>
+          <li><b>2024-2025</b>, journée de formation, assistance à la formation et démonstration produit, Practisdental</li>
+          <li><b>Février 2023</b>, assistance et démonstration produit, formation GAD Center, cursus ODA concept</li>
+          <li><b>Août 2022</b>, journées de formation, <a href="https://www.occluso.com/" target="_blank" rel="noopener">Collège National d'Occlusodontologie</a>, Nord</li>
+          <li><b>21 avril 2016</b>, atelier, gestion des difficultés des empreintes en prothèse implantaire, du PRF au MPM, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>22 avril 2016</b>, ateliers, endodontie mécanisée (Micro Mega) et laser (Dr Smile, Dental Concept), Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>Janvier 2016</b>, journée de formation, de l'endodontie aux tumeurs des maxillaires, avec des intervenants de la Faculté de chirurgie dentaire de Clermont Ferrand</li>
+          <li><b>4 juin 2015</b>, journée d'enseignement post universitaire en stomatologie, CHU Lyon Sud</li>
+          <li><b>Avril 2015</b>, atelier de chirurgie muco gingivale, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>Avril 2015</b>, atelier de piézochirurgie, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>Avril 2015</b>, atelier facettes composites Edelweiss, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>Mai 2014</b>, traitement des classes II sans extraction, thérapeutique DAC, étapes du traitement et applications pratiques, Société Française d'Orthodontie</li>
+          <li><b>Janvier 2014</b>, syndrome d'apnée du sommeil, Société Française d'Orthodontie</li>
+          <li><b>23 janvier 2014</b>, journée de formation en endodontie, MFL</li>
+          <li><b>24 janvier 2013</b>, journée de formation en radioprotection, MFL</li>
+          <li><b>Novembre 2011</b>, formation Feel 4D</li>
+          <li><b>15 mai 2010</b>, journée régionale de la santé buccale et dentaire, Institut National de Formation des Cadres de la Santé, Monastir, Tunisie</li>
+          <li><b>27 mars 2010</b>, atelier stratification des composites, reconstitution d'une couronne complète, application technique de siloranes Z350 XT et P90</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="job-detail">
+      <summary><span class="chev">▾</span> Voir la liste des congrès (18)</summary>
+      <div class="job-detail-body">
+        <ul class="cpd-list">
+          <li><b>18 au 20 juin 2025</b>, Les Printanières, Global D, assistance aux conférences et démonstration produit, Cité Internationale de Lyon</li>
+          <li><b>26 au 30 novembre 2024</b>, congrès ADF, Palais des Congrès de Paris</li>
+          <li><b>10 et 11 octobre 2024</b>, congrès <a href="https://www.globald.com/actualites/digital-indian-summer-2024/" target="_blank" rel="noopener">Digital Indian Summer</a>, 5e édition, MODJAW, autour de l'occlusodontologie numérique, assistance et démonstration produit, centre des congrès d'Ibiza</li>
+          <li><b>28 novembre au 2 décembre 2023</b>, congrès ADF, Palais des Congrès de Paris</li>
+          <li><b>5, 6 et 7 octobre 2023</b>, congrès <a href="https://www.globald.com/actualites/digital-indian-summer-2023/" target="_blank" rel="noopener">Digital Indian Summer</a>, organisé par Global D et MODJAW, autour de l'occlusodontologie numérique, assistance et démonstration produit, Marrakech, Maroc</li>
+          <li><b>8 au 10 mai 2023</b>, journées dentaires de Martinique, assistance et démonstration produit</li>
+          <li><b>8 au 10 mars 2023</b>, Les Printanières, Global D, assistance aux conférences et démonstration produit, Cité Internationale de Lyon</li>
+          <li><b>22 au 26 novembre 2022</b>, congrès ADF, Palais des Congrès de Paris</li>
+          <li><b>7 et 8 octobre 2022</b>, congrès Digital Indian Summer 3, MODJAW, autour de l'occlusodontologie numérique, assistance et démonstration produit, Barcelone</li>
+          <li><b>Juin 2022</b>, congrès <a href="https://www.occluso.com/" target="_blank" rel="noopener">Collège National d'Occlusodontologie</a>, Marseille</li>
+          <li><b>21 au 23 avril 2016</b>, Entretiens odontologiques, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>24 et 25 avril 2015</b>, XXIIIe Entretiens odontologiques, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>11 et 12 juin 2011</b>, 3e congrès de l'ATORECD, premières rencontres odontologiques tunisio-hispaniques</li>
+          <li><b>24 et 25 mars 2011</b>, 2e séminaire d'odontologie conservatrice, Faculté de Médecine Dentaire de Monastir</li>
+          <li><b>19 et 20 février 2011</b>, 1er congrès national des jeunes médecins dentistes</li>
+          <li><b>12 mai 2010</b>, séminaire multidisciplinaire du GEAVOSS, groupement d'étude audiovisuel odontostomatologique de Strasbourg</li>
+          <li><b>13 et 14 février 2010</b>, 2e congrès de l'ATORECD, association tunisienne odontologique de recherches et d'études en chirurgie et douleur</li>
+          <li><b>27 mars 2010</b>, 3e journée scientifique multidisciplinaire du service de médecine dentaire</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="footer-inner">
-    <span class="eyebrow-tag" style="color:#F0A9BE;">Contact</span>
+    <span class="eyebrow-tag" style="color:#8FC4D1;">Contact</span>
     <h2>Construisons la suite de mon parcours ensemble</h2>
     <p>Basée à Saint Étienne, ouverte au Rhône et à la Loire.</p>
     <a href="mailto:votre.email@exemple.com" class="btn btn-solid" style="margin-top:28px; background:#fff; color:var(--burgundy-deeper); border-color:#fff;">M'écrire</a>
     <div class="contact-icon-row">
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-        <a href="mailto:votre.email@exemple.com">fejjari_karima@hotmail.fr</a>
+        <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a>
       </div>
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg></span>
-        <span class="c-val">+33608897771</span>
+        <span class="c-val">Téléphone à compléter</span>
       </div>
       <div class="c-row">
         <span class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7.5 10.5v6M7.5 7.8v.01M12 16.5v-4c0-1.2.8-2 2-2s2 .8 2 2v4M12 12.5v4"/></svg></span>
@@ -916,6 +1039,10 @@
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Revenir en haut de page">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
@@ -927,6 +1054,12 @@
     links.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   }));
+
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 700);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 </script>
 
 </body>
